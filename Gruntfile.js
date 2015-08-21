@@ -45,7 +45,11 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.registerTask('unittestenv', 'Set unit test environment variables', function(){
+    process.env.BKK_CONFIG_FILE = '../unit-test-config.json';
+  });
+
   grunt.registerTask('default', ['jshint', 'mochacli']);
-  grunt.registerTask('test', ['mochacli:unit']);
+  grunt.registerTask('test', ['unittestenv','mochacli:unit']);
   grunt.registerTask('inttest', ['mochacli:int']);
 };

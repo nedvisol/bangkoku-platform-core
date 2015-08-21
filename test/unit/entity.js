@@ -2,6 +2,7 @@ var assert = require('assert');
 var sinon = require('sinon');
 var _ = require('underscore');
 var Entity = require('../../lib/entity.js');
+var Q = require('q');
 
 
 function restoreAll(stubs) {
@@ -127,7 +128,7 @@ describe('Entity', function(){
           foo: 'test001',
           bar: 'aaa',
           fooBar: 'test001aaa'
-        }]);
+        }], 'called bdc.put() with right params');
         assert.equal(results, ent, 'returns itself');
         restoreAll(ss);
         done();
