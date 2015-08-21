@@ -5,7 +5,7 @@
   },
   "cacheManager" : {
     "backend" : "memcached"
-  }
+  },
   "foo" : {
     "map" : "bar"
   }
